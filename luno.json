@@ -1,0 +1,32 @@
+{
+  "name": "stuff",
+  "version": "1.1.0",
+  "description": "Secure encrypted text editor with Web Crypto and File System Access API",
+  "type": "luno-web-app",
+  "mainClass": "Stuff",
+  "entrypoint": {
+    "file": "js/Stuff.js",
+    "class": "Stuff",
+    "method": "run"
+  },
+  "main": [
+    "js/Stuff.js"
+  ],
+  "library": [
+    "DomBasics.js",
+    "UITools.js"
+  ],
+  "styles": [
+    "css/basicsWithDialogBox.css"
+  ],
+  "processedCountSinceCheckpoint": 5,
+  "changedMethods": {
+    "css/basicsWithDialogBox.css": "2026-09-27T22:42:37.325Z",
+    "files.json": "2026-09-27T22:42:37.325Z",
+    "luno.json": "2026-09-27T22:42:37.325Z",
+    "index.html": "2026-09-27T22:42:37.325Z",
+    "js/Stuff.js": "2026-09-27T22:42:37.325Z"
+  },
+  "lastCheckpointTime": "2026-09-27T22:45:00.000Z",
+  "pendingCheckpointDescription": "Upgraded to client-side encrypted text editor"
+}

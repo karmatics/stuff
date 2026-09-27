@@ -1,0 +1,11 @@
+{
+  "main": [
+    "js/Stuff.js"
+  ],
+  "local": [],
+  "library": [
+    "DomBasics.js",
+    "UITools.js"
+  ],
+  "thirdParty": []
+}

@@ -1,0 +1,235 @@
+/* Stuff Dark Mode Editor Styles */
+:root {
+  --stuff-bg: #090d16;
+  --stuff-panel: #131926;
+  --stuff-panel-border: #232d42;
+  --stuff-toolbar-bg: #101622;
+  --stuff-text: #e2e8f0;
+  --stuff-text-dim: #94a3b8;
+  --stuff-accent: #38bdf8;
+  --stuff-accent-hover: #0ea5e9;
+  --stuff-green: #10b981;
+  --stuff-red: #ef4444;
+  --stuff-amber: #f59e0b;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--stuff-bg);
+  color: var(--stuff-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+}
+
+#app-root, #app-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.stuff-editor-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--stuff-bg);
+  box-sizing: border-box;
+}
+
+/* Header & Toolbar */
+.stuff-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 8px 14px;
+  background: var(--stuff-toolbar-bg);
+  border-bottom: 1px solid var(--stuff-panel-border);
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.stuff-brand {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: var(--stuff-accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.stuff-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stuff-sep {
+  width: 1px;
+  height: 22px;
+  background: var(--stuff-panel-border);
+  margin: 0 4px;
+}
+
+.stuff-input {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--stuff-panel-border);
+  color: var(--stuff-text);
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.stuff-input:focus {
+  border-color: var(--stuff-accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.stuff-btn {
+  background: #1e293b;
+  color: var(--stuff-text);
+  border: 1px solid var(--stuff-panel-border);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.stuff-btn:hover {
+  background: #283548;
+  border-color: #3b4d6a;
+  color: #fff;
+}
+
+.stuff-btn.primary {
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #fff;
+}
+
+.stuff-btn.primary:hover {
+  background: #0369a1;
+}
+
+.stuff-btn.danger {
+  background: #7f1d1d;
+  border-color: #ef4444;
+}
+
+.stuff-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--stuff-text-dim);
+  cursor: pointer;
+  user-select: none;
+}
+
+.stuff-checkbox-label input {
+  cursor: pointer;
+  accent-color: var(--stuff-accent);
+}
+
+/* Status Bar */
+.stuff-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 14px;
+  background: #0d121c;
+  border-bottom: 1px solid var(--stuff-panel-border);
+  font-size: 11.5px;
+  color: var(--stuff-text-dim);
+  flex-shrink: 0;
+}
+
+.stuff-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stuff-badge.plain {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+.stuff-badge.encrypted {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.stuff-badge.decrypted {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.stuff-badge.unsaved {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Editor Area */
+.stuff-editor-container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.CodeMirror {
+  width: 100% !important;
+  height: 100% !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  background: #090d16 !important;
+  color: #e2e8f0 !important;
+}
+
+.CodeMirror-gutters {
+  background: #0e1422 !important;
+  border-right: 1px solid #1e283d !important;
+}
+
+.CodeMirror-linenumber {
+  color: #475569 !important;
+}
+
+.stuff-fallback-textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #090d16;
+  color: #e2e8f0;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-family: monospace;
+  font-size: 14px;
+  resize: none;
+}
